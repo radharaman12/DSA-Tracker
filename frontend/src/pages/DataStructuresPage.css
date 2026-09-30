@@ -1,0 +1,104 @@
+.ds-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  animation: viz-enter 500ms ease-out both;
+}
+
+.ds-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.ds-header h2 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--text-h);
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.ds-header p {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.ds-card {
+  background: var(--bg, #fff);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ds-card h3 {
+  font-size: 1.6rem;
+  color: var(--text-h);
+  margin: 0 0 12px;
+}
+
+.ds-card p {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 24px;
+  flex: 1;
+}
+
+.active-card {
+  cursor: pointer;
+}
+
+.active-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.active-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+  border-color: #6366f1;
+}
+
+.active-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ds-link-text {
+  font-weight: 600;
+  color: #6366f1;
+  font-size: 1rem;
+}
+
+.inactive-card {
+  background: var(--code-bg, #f4f3ec);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.inactive-card .coming-soon {
+  color: #a19ea8;
+}
+
+@media (max-width: 768px) {
+  .ds-header h2 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,65 @@
+.ds-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: viz-enter 400ms ease-out;
+}
+.stack-visualizer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  min-height: 400px;
+  align-items: flex-end;
+}
+.stack-container {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-left: 4px solid var(--border, #e5e4e7);
+  border-right: 4px solid var(--border, #e5e4e7);
+  border-bottom: 4px solid var(--border, #e5e4e7);
+  border-radius: 0 0 12px 12px;
+  padding: 10px;
+  background: var(--code-bg, #f4f3ec);
+  position: relative;
+}
+.stack-empty {
+  text-align: center;
+  color: #a19ea8;
+  font-weight: 600;
+  padding: 20px 0;
+}
+.stack-cell {
+  background: var(--bg, #fff);
+  border: 2px solid var(--border, #e5e4e7);
+  color: var(--text-h);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 0;
+  margin-top: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  animation: slide-down 0.4s ease-out;
+}
+.stack-cell.active {
+  border-color: #6366f1;
+  background: #6366f1;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.25);
+  z-index: 10;
+}
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Common DS styles for the rest of the file */
+.ds-header { text-align: center; margin-bottom: 24px; }
+.ds-header h2 { font-size: 2.2rem; color: var(--text-h); margin: 0 0 8px; }
+.ds-header p { color: var(--text); font-size: 1.1rem; margin: 0; }
+.ds-controls-box { background: var(--bg, #fff); border: 1px solid var(--border, #e5e4e7); padding: 24px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 32px; }
+.ds-log-box { background: var(--code-bg, #f4f3ec); border: 1px solid var(--border, #e5e4e7); padding: 16px; border-radius: 8px; color: var(--text); font-size: 1rem; height: 140px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; scroll-behavior: smooth; font-family: monospace; }

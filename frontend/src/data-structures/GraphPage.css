@@ -1,0 +1,87 @@
+.graph-visualizer {
+  position: relative;
+  margin-bottom: 40px;
+  height: 350px;
+  background: var(--code-bg, #f4f3ec);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.graph-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.graph-edge {
+  stroke: #a19ea8;
+  stroke-width: 3;
+}
+.graph-empty {
+  color: #a19ea8;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.graph-node {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--bg, #fff);
+  border: 2px solid var(--border, #e5e4e7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: var(--text-h);
+  transform: translate(-50%, -50%); /* Center based on left/top */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  animation: pop-in 0.3s ease-out;
+  cursor: grab;
+  z-index: 10;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.graph-node.active {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.graph-edge.active {
+  stroke: #6366f1;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.5));
+}
+.graph-node {
+  user-select: none;
+  touch-action: none;
+}
+.graph-node.dragging {
+  opacity: 0.8;
+  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  cursor: grabbing;
+}
+.graph-controls-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.edge-inputs {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.mt-3 {
+  margin-top: 16px;
+  justify-content: center;
+}

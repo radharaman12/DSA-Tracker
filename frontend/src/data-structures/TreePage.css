@@ -1,0 +1,106 @@
+/* Basic Treeflex-style CSS for drawing trees using nested lists */
+.tree-visualizer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  min-height: 350px;
+  overflow-x: auto;
+  padding-top: 20px;
+}
+.tree-empty-msg {
+  color: #a19ea8;
+  font-weight: 600;
+  margin-top: 100px;
+}
+
+.tf-tree {
+  text-align: center;
+}
+.tf-tree ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  padding-left: 0;
+  list-style-type: none;
+}
+.tf-tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 10px 0 10px;
+  transition: all 0.5s;
+}
+
+/* Connectors */
+.tf-tree li::before, .tf-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 50%;
+  border-top: 2px solid var(--border, #e5e4e7);
+  width: 50%; height: 20px;
+}
+.tf-tree li::after {
+  right: auto; left: 50%;
+  border-left: 2px solid var(--border, #e5e4e7);
+}
+.tf-tree li:only-child::after, .tf-tree li:only-child::before {
+  display: none;
+}
+.tf-tree li:only-child {
+  padding-top: 0;
+}
+.tf-tree li:first-child::before, .tf-tree li:last-child::after {
+  border: 0 none;
+}
+.tf-tree li:last-child::before {
+  border-right: 2px solid var(--border, #e5e4e7);
+  border-radius: 0 5px 0 0;
+}
+.tf-tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+/* Downward line from parent */
+.tf-tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  border-left: 2px solid var(--border, #e5e4e7);
+  width: 0; height: 20px;
+  transform: translateX(-1px);
+}
+
+.tf-nc {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 50%;
+  min-width: 50px;
+  min-height: 50px;
+  line-height: 26px;
+  background: var(--bg, #fff);
+  border: 2px solid var(--border, #e5e4e7);
+  color: var(--text-h);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  animation: scale-up 0.3s ease-out;
+}
+.tf-nc.empty {
+  visibility: hidden;
+}
+.tf-nc.active {
+  border-color: #6366f1;
+  background: #6366f1;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.25);
+}
+
+@keyframes scale-up {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}

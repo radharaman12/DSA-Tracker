@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --text: #5f6b63;
+  --text-h: #17231e;
+  --bg: #f2f5ef;
+  --border: #d6dfd4;
+  --code-bg: #e9efe6;
+  --accent: #a7cf37;
+  --accent-bg: rgba(167, 207, 55, 0.18);
+  --accent-border: rgba(101, 133, 22, 0.55);
+  --sans: 'Space Grotesk', 'Avenir Next', sans-serif;
+  --heading: 'Space Grotesk', 'Avenir Next', sans-serif;
+  --mono: 'DM Mono', ui-monospace, monospace;
+
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(23, 35, 30, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 35, 30, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+#root {
+  width: 100%;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 2.6rem;
+  letter-spacing: 0;
+  margin: 0;
+}
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* App Layout Styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+

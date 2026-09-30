@@ -1,0 +1,214 @@
+.array-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: viz-enter 400ms ease-out;
+}
+
+.array-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.array-header h2 {
+  font-size: 2.2rem;
+  color: var(--text-h);
+  margin: 0 0 8px;
+}
+
+.array-header p {
+  color: var(--text);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.array-log-box {
+  background: var(--code-bg, #f4f3ec);
+  border: 1px solid var(--border, #e5e4e7);
+  padding: 16px;
+  border-radius: 8px;
+  color: var(--text);
+  margin-top: 32px; margin-bottom: 0;
+  font-size: 1rem;
+  height: 140px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+  font-family: monospace;
+}
+
+.log-entry {
+  padding: 4px 8px;
+  border-left: 3px solid #6366f1;
+  background: rgba(99, 102, 241, 0.05);
+  animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateX(-5px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.array-visualizer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.array-cell {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--border, #e5e4e7);
+  border-radius: 8px;
+  background: var(--bg, #fff);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.array-cell.empty {
+  background: var(--code-bg, #f4f3ec);
+  border-style: dashed;
+  opacity: 0.6;
+}
+
+.array-cell.active {
+  border-color: #6366f1;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+}
+
+.array-cell.active .array-val {
+  background: #6366f1;
+  color: #fff;
+}
+
+.array-val {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-h);
+  border-bottom: 1px solid var(--border, #e5e4e7);
+  transition: all 0.3s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.array-idx {
+  width: 100%;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--code-bg, #f4f3ec);
+  border-radius: 0 0 6px 6px;
+}
+
+.array-controls-box {
+  background: var(--bg, #fff);
+  border: 1px solid var(--border, #e5e4e7);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.inputs-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.input-group input {
+  padding: 10px 14px;
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 120px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--bg, #fff);
+  color: var(--text-h);
+}
+
+.input-group input:focus {
+  border-color: #6366f1;
+}
+
+.buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.buttons-row button {
+  padding: 12px 24px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.buttons-row button:hover:not(:disabled) {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.buttons-row button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttons-row button.btn-danger {
+  background: #ef4444;
+}
+.buttons-row button.btn-danger:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.buttons-row button.btn-secondary {
+  background: var(--code-bg, #f4f3ec);
+  color: var(--text-h);
+  border: 1px solid var(--border, #e5e4e7);
+}
+.buttons-row button.btn-secondary:hover:not(:disabled) {
+  background: #e5e4e7;
+}
+
+@media (max-width: 640px) {
+  .array-cell {
+    width: 55px;
+  }
+  .array-val {
+    font-size: 1.1rem;
+    padding: 14px 0;
+  }
+  .inputs-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
