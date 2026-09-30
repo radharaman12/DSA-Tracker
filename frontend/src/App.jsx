@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import Visualizer from './algorithms/components/Visualizer';
 import ArrayPage from './data-structures/ArrayPage';
 import LinkedListPage from './data-structures/LinkedListPage';
@@ -12,35 +14,39 @@ import StackPage from './data-structures/StackPage';
 import QueuePage from './data-structures/QueuePage';
 import TreePage from './data-structures/TreePage';
 import GraphPage from './data-structures/GraphPage';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
-  // Guarantee the user's browser clears any leftover dark theme cache
   useEffect(() => {
     document.documentElement.removeAttribute('data-theme');
     localStorage.removeItem('theme');
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="app-container">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/data-structures" element={<DataStructuresPage />} />
-            <Route path="/arrays" element={<ArrayPage />} />
-            <Route path="/linked-list" element={<LinkedListPage />} />
-            <Route path="/stack" element={<StackPage />} />
-            <Route path="/queue" element={<QueuePage />} />
-            <Route path="/tree" element={<TreePage />} />
-            <Route path="/graph" element={<GraphPage />} />
-            <Route path="/algorithms" element={<Visualizer />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <div className="app-container">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/data-structures" element={<DataStructuresPage />} />
+              <Route path="/arrays" element={<ArrayPage />} />
+              <Route path="/linked-list" element={<LinkedListPage />} />
+              <Route path="/stack" element={<StackPage />} />
+              <Route path="/queue" element={<QueuePage />} />
+              <Route path="/tree" element={<TreePage />} />
+              <Route path="/graph" element={<GraphPage />} />
+              <Route path="/algorithms" element={<Visualizer />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

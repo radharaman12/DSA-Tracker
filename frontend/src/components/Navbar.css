@@ -139,3 +139,70 @@
   background: var(--code-bg, #f4f3ec);
   transform: rotate(15deg);
 }
+
+/* Auth Styles */
+.auth-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-email {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.logout-btn {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #fef2f2;
+}
+
+.auth-link {
+  font-weight: 600 !important;
+}
+
+.login-link {
+  color: var(--accent) !important;
+}
+
+.register-link {
+  background: var(--accent);
+  color: var(--text-h) !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+.register-link:hover {
+  opacity: 0.9;
+  background: var(--accent) !important;
+  color: var(--text-h) !important;
+}
+
+@media (max-width: 960px) {
+  .auth-nav-item {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  .register-link {
+    margin-left: 0;
+    text-align: center;
+    background: transparent;
+    color: var(--accent) !important;
+  }
+}
