@@ -1,0 +1,71 @@
+.dashboard-container {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: calc(100vh - 140px);
+}
+
+.dashboard-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-h);
+}
+
+.dashboard-card {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.dashboard-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-h);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  width: 150px;
+  color: var(--text);
+}
+
+.detail-value {
+  color: var(--text-h);
+  font-family: var(--mono);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.dashboard-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.progress-count {
+  font-size: 1.1rem;
+}
+
+.progress-percent {
+  font-size: 1.5rem;
+  color: #10b981;
+}

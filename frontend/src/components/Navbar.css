@@ -206,3 +206,35 @@
     color: var(--accent) !important;
   }
 }
+
+/* Profile Dropdown Customization */
+.profile-dropdown {
+  right: 0;
+  left: auto;
+  transform: none;
+  min-width: 150px;
+}
+
+.profile-dropdown button.dropdown-item-btn {
+  background: none;
+  border: none;
+  color: var(--text, #6b6375);
+  padding: 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.profile-dropdown button.dropdown-item-btn:hover {
+  background-color: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+}

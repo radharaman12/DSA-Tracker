@@ -24,7 +24,7 @@ const Register = () => {
     const result = await register(email, password);
     
     if (result.success) {
-      navigate('/');
+      navigate('/dashboard');
     } else {
       setError(result.message);
     }

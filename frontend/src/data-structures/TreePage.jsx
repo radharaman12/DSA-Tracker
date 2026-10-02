@@ -1,3 +1,4 @@
+import MarkAsDoneButton from '../components/MarkAsDoneButton';
 import { useState, useRef, useEffect } from 'react';
 import './TreePage.css';
 
@@ -174,6 +175,16 @@ export default function TreePage() {
         <p>Visualize BST insertions, searches, and Traversals.</p>
       </div>
 
+      <div className="theory-box" style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '2rem' }}>
+        <h3 style={{ marginTop: 0, color: 'var(--text-h)' }}>Binary Search Tree Theory</h3>
+        <p style={{ color: 'var(--text)', lineHeight: '1.6' }}>A Binary Search Tree is a node-based binary tree data structure where the left subtree contains only nodes with keys lesser than the parent’s key, and the right subtree has greater keys.</p>
+        <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem', fontSize: '0.9rem' }}>
+          <div><strong style={{color: 'var(--text-h)'}}>Time Complexity:</strong> <span style={{color: 'var(--text)'}}> Search/Insert/Delete: O(log n) average, O(n) worst-case </span></div>
+          <div><strong style={{color: 'var(--text-h)'}}>Space Complexity:</strong> <span style={{color: 'var(--text)'}}> O(n) </span></div>
+        </div>
+      </div>
+
+
       <div className="ds-visualizer tree-visualizer">
         {!root ? <div className="tree-empty-msg">Empty Tree</div> : renderTree(root)}
       </div>
@@ -204,6 +215,10 @@ export default function TreePage() {
           <div key={i} className="log-entry">{log}</div>
         ))}
         <div ref={logEndRef} />
+      </div>
+    
+      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+        <MarkAsDoneButton topicId="tree" topicName="Tree" />
       </div>
     </div>
   );

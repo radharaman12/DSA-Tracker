@@ -1,3 +1,4 @@
+import MarkAsDoneButton from '../components/MarkAsDoneButton';
 import { useState, useRef, useEffect } from 'react';
 import './StackPage.css';
 
@@ -97,6 +98,16 @@ export default function StackPage() {
         <p>Visualize Last-In-First-Out operations.</p>
       </div>
 
+      <div className="theory-box" style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '2rem' }}>
+        <h3 style={{ marginTop: 0, color: 'var(--text-h)' }}>Stack Theory</h3>
+        <p style={{ color: 'var(--text)', lineHeight: '1.6' }}>A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. Elements can only be added or removed from the top of the stack.</p>
+        <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem', fontSize: '0.9rem' }}>
+          <div><strong style={{color: 'var(--text-h)'}}>Time Complexity:</strong> <span style={{color: 'var(--text)'}}> Push: O(1) | Pop: O(1) | Peek: O(1) </span></div>
+          <div><strong style={{color: 'var(--text-h)'}}>Space Complexity:</strong> <span style={{color: 'var(--text)'}}> O(n) </span></div>
+        </div>
+      </div>
+
+
       <div className="ds-visualizer stack-visualizer">
         <div className="stack-container">
           {stack.length === 0 && <div className="stack-empty">Empty Stack</div>}
@@ -141,6 +152,10 @@ export default function StackPage() {
           <div key={i} className="log-entry">{log}</div>
         ))}
         <div ref={logEndRef} />
+      </div>
+    
+      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+        <MarkAsDoneButton topicId="stack" topicName="Stack" />
       </div>
     </div>
   );

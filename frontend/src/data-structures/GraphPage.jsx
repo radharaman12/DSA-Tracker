@@ -1,3 +1,4 @@
+import MarkAsDoneButton from '../components/MarkAsDoneButton';
 import { useState, useRef, useEffect } from 'react';
 import './GraphPage.css';
 
@@ -149,6 +150,16 @@ export default function GraphPage() {
         <p>Build a graph, drag nodes to customize layout, and run BFS!</p>
       </div>
 
+      <div className="theory-box" style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '2rem' }}>
+        <h3 style={{ marginTop: 0, color: 'var(--text-h)' }}>Graph Theory</h3>
+        <p style={{ color: 'var(--text)', lineHeight: '1.6' }}>A graph is a non-linear data structure consisting of vertices (nodes) and edges. It is used to represent networks like roads, social connections, and computer networks.</p>
+        <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem', fontSize: '0.9rem' }}>
+          <div><strong style={{color: 'var(--text-h)'}}>Time Complexity:</strong> <span style={{color: 'var(--text)'}}> Varies by representation (Adjacency Matrix vs List). DFS/BFS: O(V + E) </span></div>
+          <div><strong style={{color: 'var(--text-h)'}}>Space Complexity:</strong> <span style={{color: 'var(--text)'}}> O(V + E) </span></div>
+        </div>
+      </div>
+
+
       <div 
         className="ds-visualizer graph-visualizer" 
         ref={containerRef}
@@ -239,6 +250,10 @@ export default function GraphPage() {
           <div key={i} className="log-entry">{log}</div>
         ))}
         <div ref={logEndRef} />
+      </div>
+    
+      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+        <MarkAsDoneButton topicId="graph" topicName="Graph" />
       </div>
     </div>
   );

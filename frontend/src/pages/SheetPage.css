@@ -1,0 +1,412 @@
+.sheet-page-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  animation: viz-enter 500ms ease-out both;
+}
+
+.sheet-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.sheet-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 50px;
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.sheet-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-h);
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.sheet-header p {
+  color: var(--text);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Progress Card */
+.sheet-progress-card {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.sheet-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.sheet-progress-top h3 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: var(--text-h);
+}
+
+.sheet-progress-ratio {
+  font-size: 0.95rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.difficulty-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pill-easy {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.pill-med {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.pill-hard {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.sheet-progress-bar-bg {
+  width: 100%;
+  height: 12px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sheet-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+}
+
+/* Controls */
+.sheet-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.sheet-search {
+  flex-grow: 1;
+  min-width: 260px;
+}
+
+.sheet-search input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.sheet-search input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.sheet-filters-group {
+  display: flex;
+  gap: 12px;
+}
+
+.sheet-filter-select {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.sheet-filter-select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* Topic Tabs */
+.topic-tabs-scroll {
+  overflow-x: auto;
+  margin-bottom: 24px;
+  padding-bottom: 6px;
+}
+
+.topic-tabs {
+  display: flex;
+  gap: 8px;
+  min-width: max-content;
+}
+
+.topic-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.topic-tab-btn:hover {
+  background: var(--bg);
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.topic-tab-btn.active {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+.topic-tab-count {
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.topic-tab-btn.active .topic-tab-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* Table */
+.sheet-table-wrapper {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.sheet-table th {
+  background: var(--code-bg);
+  padding: 14px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sheet-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.sheet-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sheet-table tr:hover td {
+  background-color: rgba(99, 102, 241, 0.02);
+}
+
+.sheet-table tr.row-solved td {
+  background-color: rgba(16, 185, 129, 0.025);
+}
+
+/* Status Button Checkbox */
+.status-check-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fff;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.status-check-btn:hover {
+  border-color: #10b981;
+  transform: scale(1.05);
+}
+
+.status-check-btn.solved {
+  background: #10b981;
+  border-color: #10b981;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
+}
+
+/* Problem Title */
+.problem-title {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.problem-title.title-solved {
+  color: var(--text);
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+
+.topic-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+/* Difficulty Badges */
+.diff-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.diff-easy {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+.diff-medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+}
+
+.diff-hard {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+/* Action Links */
+.action-links {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.action-btn-practice {
+  padding: 6px 12px;
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.action-btn-practice:hover {
+  background: #6366f1;
+  color: #fff;
+}
+
+
+
+
+
+/* Loading & Empty */
+.sheet-loading,
+.sheet-empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.sheet-reset-btn {
+  margin-top: 14px;
+  padding: 8px 18px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sheet-header h1 {
+    font-size: 1.9rem;
+  }
+  .sheet-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sheet-filters-group {
+    flex-direction: column;
+  }
+  .sheet-table th:nth-child(3),
+  .sheet-table td:nth-child(3) {
+    display: none;
+  }
+}

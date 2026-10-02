@@ -1,3 +1,4 @@
+import MarkAsDoneButton from '../components/MarkAsDoneButton';
 import { useState, useRef, useEffect } from 'react';
 import './QueuePage.css';
 
@@ -95,6 +96,16 @@ export default function QueuePage() {
         <p>Visualize First-In-First-Out operations.</p>
       </div>
 
+      <div className="theory-box" style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '2rem' }}>
+        <h3 style={{ marginTop: 0, color: 'var(--text-h)' }}>Queue Theory</h3>
+        <p style={{ color: 'var(--text)', lineHeight: '1.6' }}>A queue is a linear data structure that follows the First In, First Out (FIFO) principle. Elements are added at the rear and removed from the front.</p>
+        <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem', fontSize: '0.9rem' }}>
+          <div><strong style={{color: 'var(--text-h)'}}>Time Complexity:</strong> <span style={{color: 'var(--text)'}}> Enqueue: O(1) | Dequeue: O(1) | Front: O(1) </span></div>
+          <div><strong style={{color: 'var(--text-h)'}}>Space Complexity:</strong> <span style={{color: 'var(--text)'}}> O(n) </span></div>
+        </div>
+      </div>
+
+
       <div className="ds-visualizer queue-visualizer">
         <div className="queue-container">
           <div className="queue-label front-label">Front</div>
@@ -139,6 +150,10 @@ export default function QueuePage() {
           <div key={i} className="log-entry">{log}</div>
         ))}
         <div ref={logEndRef} />
+      </div>
+    
+      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+        <MarkAsDoneButton topicId="queue" topicName="Queue" />
       </div>
     </div>
   );

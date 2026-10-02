@@ -1,0 +1,30 @@
+.mark-done-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.mark-done-btn:hover {
+  background-color: var(--code-bg);
+  border-color: #6366f1;
+}
+
+.mark-done-btn.done {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #059669;
+}
+
+.mark-done-btn.done:hover {
+  background-color: rgba(16, 185, 129, 0.2);
+}

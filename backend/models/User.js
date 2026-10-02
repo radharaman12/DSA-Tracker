@@ -8,6 +8,8 @@ const userSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
+  completedTopics: { type: [String], default: [] },
+  completedProblems: { type: [String], default: [] },
   password: {
     type: String,
     required: true,

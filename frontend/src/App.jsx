@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import SheetPage from './pages/SheetPage';
 import Visualizer from './algorithms/components/Visualizer';
 import ArrayPage from './data-structures/ArrayPage';
 import LinkedListPage from './data-structures/LinkedListPage';
@@ -14,6 +15,7 @@ import StackPage from './data-structures/StackPage';
 import QueuePage from './data-structures/QueuePage';
 import TreePage from './data-structures/TreePage';
 import GraphPage from './data-structures/GraphPage';
+import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -29,18 +31,92 @@ function App() {
           <Navbar />
           <main className="main-content">
             <Routes>
+              {/* Public Routes */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/data-structures" element={<DataStructuresPage />} />
-              <Route path="/arrays" element={<ArrayPage />} />
-              <Route path="/linked-list" element={<LinkedListPage />} />
-              <Route path="/stack" element={<StackPage />} />
-              <Route path="/queue" element={<QueuePage />} />
-              <Route path="/tree" element={<TreePage />} />
-              <Route path="/graph" element={<GraphPage />} />
-              <Route path="/algorithms" element={<Visualizer />} />
-              <Route path="/about" element={<About />} />
+
+              {/* Protected Routes (Requires Login/Signup) */}
+              <Route 
+                path="/dashboard" 
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/sheet" 
+                element={
+                  <ProtectedRoute>
+                    <SheetPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/data-structures" 
+                element={
+                  <ProtectedRoute>
+                    <DataStructuresPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/arrays" 
+                element={
+                  <ProtectedRoute>
+                    <ArrayPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/linked-list" 
+                element={
+                  <ProtectedRoute>
+                    <LinkedListPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/stack" 
+                element={
+                  <ProtectedRoute>
+                    <StackPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/queue" 
+                element={
+                  <ProtectedRoute>
+                    <QueuePage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/tree" 
+                element={
+                  <ProtectedRoute>
+                    <TreePage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/graph" 
+                element={
+                  <ProtectedRoute>
+                    <GraphPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/algorithms" 
+                element={
+                  <ProtectedRoute>
+                    <Visualizer />
+                  </ProtectedRoute>
+                } 
+              />
             </Routes>
           </main>
           <Footer />

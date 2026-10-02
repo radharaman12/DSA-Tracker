@@ -1,3 +1,4 @@
+import MarkAsDoneButton from '../components/MarkAsDoneButton';
 import { useState, useRef, useEffect } from 'react';
 import './ArrayPage.css';
 
@@ -194,6 +195,16 @@ export default function ArrayPage() {
         <p>Visualize standard Data Structure operations on a fixed-capacity Array.</p>
       </div>
 
+      <div className="theory-box" style={{ background: 'var(--bg)', padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '2rem' }}>
+        <h3 style={{ marginTop: 0, color: 'var(--text-h)' }}>Array Theory</h3>
+        <p style={{ color: 'var(--text)', lineHeight: '1.6' }}>An array is a collection of items stored at contiguous memory locations. It allows random access to elements using an index, making reads extremely fast.</p>
+        <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem', fontSize: '0.9rem' }}>
+          <div><strong style={{color: 'var(--text-h)'}}>Time Complexity:</strong> <span style={{color: 'var(--text)'}}> Access: O(1) | Search: O(n) | Insertion/Deletion: O(n) </span></div>
+          <div><strong style={{color: 'var(--text-h)'}}>Space Complexity:</strong> <span style={{color: 'var(--text)'}}> O(n) </span></div>
+        </div>
+      </div>
+
+
       <div className="array-visualizer">
         {array.map((val, i) => (
           <div 
@@ -244,6 +255,10 @@ export default function ArrayPage() {
           <div key={i} className="log-entry">{log}</div>
         ))}
         <div ref={logEndRef} />
+      </div>
+    
+      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+        <MarkAsDoneButton topicId="array" topicName="Array" />
       </div>
     </div>
   );
