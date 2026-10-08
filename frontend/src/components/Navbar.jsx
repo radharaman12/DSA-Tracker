@@ -33,9 +33,6 @@ const Navbar = () => {
           </Link>
         </li>
 
-        {/* Data Structures, Algorithms & DSA Sheet only accessible & visible after login */}
-        {user && (
-          <>
             <li>
               <div className="dropdown">
                 <Link 
@@ -64,8 +61,6 @@ const Navbar = () => {
                 DSA Sheet
               </Link>
             </li>
-          </>
-        )}
         
         {/* Auth Navigation */}
         {user ? (

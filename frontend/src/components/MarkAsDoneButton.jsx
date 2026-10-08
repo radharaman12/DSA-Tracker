@@ -14,7 +14,7 @@ const MarkAsDoneButton = ({ topicId, topicName }) => {
     // Check initial status by fetching profile
     const fetchStatus = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/profile', {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}` + '/api/profile', {
           headers: { Authorization: `Bearer ${user.token}` }
         });
         const completed = res.data.user.completedTopics || [];
@@ -34,7 +34,7 @@ const MarkAsDoneButton = ({ topicId, topicName }) => {
     
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5001/api/progress', 
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}` + '/api/progress', 
         { topicId },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

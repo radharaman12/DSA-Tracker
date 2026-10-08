@@ -18,34 +18,23 @@ export default function Home() {
           interview problems across all core DSA topics with MongoDB cloud progress tracking.
         </p>
 
-        {user ? (
-          <div className="home-cta-group">
-            <Link to="/sheet" className="home-cta">
-              Practice DSA Sheet →
+        <div className="home-cta-group">
+          <Link to="/sheet" className="home-cta">
+            Practice DSA Sheet →
+          </Link>
+          <Link to="/algorithms" className="home-cta-secondary">
+            Visualizer
+          </Link>
+          {!user ? (
+            <Link to="/register" className="home-cta-secondary">
+              Sign Up to Track Progress
             </Link>
+          ) : (
             <Link to="/dashboard" className="home-cta-secondary">
               Go to Dashboard
             </Link>
-            <Link to="/algorithms" className="home-cta-secondary">
-              Visualizer
-            </Link>
-          </div>
-        ) : (
-          <div className="home-cta-group">
-            <Link to="/register" className="home-cta">
-              Get Started Free →
-            </Link>
-            <Link to="/login" className="home-cta-secondary">
-              Sign In to Your Account
-            </Link>
-          </div>
-        )}
-
-        {!user && (
-          <p className="home-lock-notice">
-            🔒 <strong>Authentication Required:</strong> Sign up or log in to unlock full access to the Problem Sheet, Data Structures, and Algorithm visualizers.
-          </p>
-        )}
+          )}
+        </div>
       </div>
 
       <div className="home-features">
@@ -56,7 +45,7 @@ export default function Home() {
             Topic-wise interview problems with difficulty ratings (Easy, Medium, Hard), direct LeetCode links,
             and one-click checkboxes that save your progress permanently.
           </p>
-          {!user && <span className="feature-lock">Sign in to access ➔</span>}
+          
         </div>
 
         <div className="feature-card">
@@ -66,7 +55,7 @@ export default function Home() {
             Interactive operations on Arrays, Linked Lists, Stacks, Queues, Trees, and Graphs.
             Visualize insertions, deletions, searches, and shifts dynamically.
           </p>
-          {!user && <span className="feature-lock">Sign in to access ➔</span>}
+          
         </div>
 
         <div className="feature-card">
@@ -76,7 +65,7 @@ export default function Home() {
             Watch sorting and searching algorithms step-by-step with synchronized line-by-line
             code tracking in Java, C++, and Pseudocode.
           </p>
-          {!user && <span className="feature-lock">Sign in to access ➔</span>}
+
         </div>
 
         </div>

@@ -22,7 +22,7 @@ const Dashboard = () => {
 
     const fetchProtectedProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/profile', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}` + '/api/profile', {
           headers: {
             Authorization: `Bearer ${user.token}`
           }

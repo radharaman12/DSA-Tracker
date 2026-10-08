@@ -35,6 +35,16 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              
+              <Route path="/sheet" element={<SheetPage />} />
+              <Route path="/data-structures" element={<DataStructuresPage />} />
+              <Route path="/arrays" element={<ArrayPage />} />
+              <Route path="/linked-list" element={<LinkedListPage />} />
+              <Route path="/stack" element={<StackPage />} />
+              <Route path="/queue" element={<QueuePage />} />
+              <Route path="/tree" element={<TreePage />} />
+              <Route path="/graph" element={<GraphPage />} />
+              <Route path="/algorithms" element={<Visualizer />} />
 
               {/* Protected Routes (Requires Login/Signup) */}
               <Route 
@@ -42,78 +52,6 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Dashboard />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/sheet" 
-                element={
-                  <ProtectedRoute>
-                    <SheetPage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/data-structures" 
-                element={
-                  <ProtectedRoute>
-                    <DataStructuresPage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/arrays" 
-                element={
-                  <ProtectedRoute>
-                    <ArrayPage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/linked-list" 
-                element={
-                  <ProtectedRoute>
-                    <LinkedListPage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/stack" 
-                element={
-                  <ProtectedRoute>
-                    <StackPage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/queue" 
-                element={
-                  <ProtectedRoute>
-                    <QueuePage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/tree" 
-                element={
-                  <ProtectedRoute>
-                    <TreePage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/graph" 
-                element={
-                  <ProtectedRoute>
-                    <GraphPage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/algorithms" 
-                element={
-                  <ProtectedRoute>
-                    <Visualizer />
                   </ProtectedRoute>
                 } 
               />

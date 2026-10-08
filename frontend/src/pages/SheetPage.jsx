@@ -21,7 +21,7 @@ export default function SheetPage() {
 
     const fetchSolvedData = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/profile', {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}` + '/api/profile', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setCompletedProblems(res.data.user.completedProblems || []);
@@ -42,7 +42,7 @@ export default function SheetPage() {
 
     try {
       const res = await axios.post(
-        'http://localhost:5001/api/problems/toggle',
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5001'}` + '/api/problems/toggle',
         { problemId },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
